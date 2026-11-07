@@ -188,7 +188,7 @@ The plan's steps are already in RED-GREEN order; follow them in that
 order under superpowers:test-driven-development, loaded at setup. A test
 step's code is written first and run first. Watching it fail is a step,
 not a formality — a test that passes before the implementation exists is
-a finding about the test.
+a finding about the test. A test the brief names that fails the Think Twice check is written as the plan says, with the concern in your report; the plan's author decides.
 
 Every step that runs a command has an `Expected:` line. Run the command,
 read its output, and compare. Three outcomes:

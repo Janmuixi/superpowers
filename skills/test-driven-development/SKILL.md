@@ -44,6 +44,17 @@ Write code before the test? Delete it. Start over.
 
 Implement fresh from tests. Period.
 
+The tests this law governs are the ones that pass the check in "Think Twice" below. A behavior with no worthwhile test is implemented without one only after you have said so to your human partner.
+
+## Think Twice: Is This Test Worth Writing?
+
+Every test is code someone has to maintain. Before writing one, take a second look at whether it earns its place:
+
+1. **Name the break.** Finish this sentence: "This test fails if someone changes ___, which would be a bug because ___." If you cannot fill both blanks with something specific, do not write the test. Tests that restate the implementation, assert on mocks, or exercise the framework fail here.
+2. **Check for cover.** Would the type checker, the framework, or an existing test already fail on that same change? If yes, do not write the test.
+
+Passes both: go on to RED. Fails either: skip that test and tell your human partner in one line what you skipped and why.
+
 ## Red-Green-Refactor
 
 ```dot
@@ -223,7 +234,7 @@ When writing or changing any test, read [writing-good-tests.md](writing-good-tes
 
 | Excuse | Reality |
 |--------|---------|
-| "Too simple to test" | Simple code breaks. Test takes 30 seconds. |
+| "Too simple to test" | Simple code breaks. Run the Think Twice check: if it names a real break, write the test. |
 | "I'll test after" | Tests written after pass immediately — which proves nothing. They may test the wrong thing, test the implementation instead of the behavior, or miss the edge case you forgot. You never watched it fail, so you never proved it can catch the bug. Test-first forces that failure. |
 | "Tests after achieve same goals (spirit not ritual)" | Tests-after answer "what does this do?"; tests-first answer "what should this do?" Tests written after are biased by the code you already wrote — you verify the cases you remembered, not the ones you'd have discovered. Coverage without proof the tests work. |
 | "Already manually tested" | Manual testing is ad-hoc: no record of what you covered, no way to re-run it when the code changes, easy to forget cases under pressure. "Worked when I tried it" ≠ comprehensive. Automated tests run the same way every time. |
@@ -233,7 +244,7 @@ When writing or changing any test, read [writing-good-tests.md](writing-good-tes
 | "Test hard = design unclear" | Listen to test. Hard to test = hard to use. |
 | "TDD will slow me down" | TDD IS the pragmatic path: catches bugs before commit, prevents regressions, lets you refactor without fear. "Pragmatic" shortcuts mean debugging in production — slower, not faster. |
 | "Manual test faster" | Manual doesn't prove edge cases. You'll re-test every change. |
-| "Existing code has no tests" | You're improving it. Add tests for existing code. |
+| "Existing code has no tests" | You're improving it. Add tests for the behavior you change, each one passing Think Twice. |
 
 ## Red Flags - STOP and Start Over
 
@@ -294,7 +305,7 @@ Extract validation for multiple fields if needed.
 
 Before marking work complete:
 
-- [ ] Every new function/method has a test
+- [ ] Every new behavior has a test that passed the Think Twice check, or a one-line note on why not
 - [ ] Watched each test fail before implementing
 - [ ] Each test failed for expected reason (feature missing, not typo)
 - [ ] Wrote minimal code to pass each test

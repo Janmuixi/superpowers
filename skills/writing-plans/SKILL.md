@@ -49,6 +49,8 @@ independently testable deliverable.
 - "Run the tests and make sure they pass" - step
 - "Commit" - step
 
+A task gets test steps only for tests that pass the Think Twice check in superpowers:test-driven-development. A task whose behavior has no worthwhile test says so in one line instead.
+
 ## Plan Document Header
 
 **Every plan MUST start with this header:**
@@ -84,7 +86,7 @@ document: it says what the software must do, not everything it will
 meet, and its silence on an input is not permission for that input to
 break the program. Write the list here, once, with the spec in front of
 you. Then, for each line, add the test that pins it to the task that
-owns the code, in that task's own step style.]
+owns the code, in that task's own step style. A line whose test fails the Think Twice check keeps its line and says why it has no test.]
 
 ---
 ```

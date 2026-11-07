@@ -22,7 +22,7 @@ a mock when the real dependency proves slow or external.
 Before writing the test body, answer: **what production change should
 make this test fail — and is that change a bug or a decision?** A test
 earns its place by catching a wrong branch, missing side effect, wrong
-argument, boundary case, or broken contract.
+argument, boundary case, or broken contract. If you cannot name the break, the test does not get written (see Think Twice in SKILL.md).
 
 **Derive expectations independently.** Use literals and hand-checked
 fixtures; table-driven tests with literal `want` values are the preferred

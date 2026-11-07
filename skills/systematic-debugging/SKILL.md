@@ -174,6 +174,7 @@ You MUST complete each phase before proceeding to the next.
    - Automated test if possible
    - One-off test script if no framework
    - MUST have before fixing
+   - Committed only if it passes the Think Twice check in `superpowers:test-driven-development`; a reproduction that fails it stays a one-off script
    - Use the `superpowers:test-driven-development` skill for writing proper failing tests
 
 2. **Implement Single Fix**
