@@ -17,10 +17,9 @@ If the repo has a PR template (`.github/pull_request_template.md` or similar), f
 2. **Problem:** 1-3 sentences. What was wrong or missing, and who it affected. Link the issue or ticket if one exists.
 3. **Solution:** a short paragraph or 2-5 bullets on the approach, at the level of ideas. Name the key decision and the alternative you rejected if the reviewer might wonder.
 4. **Where to look:** the 1-3 places where the real change is, and anything mechanical the reviewer can skim (renames, moved code, generated files).
-5. **Testing:** what you ran and what it showed; add manual steps if a reviewer can reproduce the result.
-6. **Risks / follow-ups:** only if there are any: breaking changes, migrations, deliberately deferred work.
+5. **Risks / follow-ups:** only if there are any: breaking changes, migrations, deliberately deferred work.
 
-A small PR gets a short description: title, problem, solution, testing. Skip a section that has nothing to say; do not pad it.
+A small PR gets a short description: title, problem, solution. Skip a section that has nothing to say; do not pad it.
 
 ## Writing Style
 
